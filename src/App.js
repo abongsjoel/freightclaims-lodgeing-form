@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
 import Layout from './HOC/Layout';
+import Form from './Organisms/Form';
 
 function App() {
   return (
     <div>
       <Layout>
-        <p>I am the main content</p>
+        <Form />
       </Layout>
     </div>
   );

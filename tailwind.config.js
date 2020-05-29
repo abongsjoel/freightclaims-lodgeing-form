@@ -13,8 +13,7 @@ module.exports = {
           500: '#cec1f2',     //sec purple
         },
         neutral: {
-          500: '#ebebeb',
-          700: '#a4a4a4'
+          900: '#4b5156'        //Logo gray
         },
       },
       spacing: {

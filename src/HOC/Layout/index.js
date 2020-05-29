@@ -6,7 +6,7 @@ import Aux from '../Auxilary'
 
 const Layout = (props) => (
   <Aux>
-      <div>
+      <div className="mt-5 ml-5 fixed">
         <Logo />
       </div>
       <main className="font-body">
