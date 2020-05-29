@@ -1,8 +1,10 @@
 import React from 'react';
 
+import Next from '../../Atoms/Next';
+
 const Nav = () => (
     <div>
-        <p>I am card navigation</p>
+        <Next />
     </div>
 );
 

@@ -2,9 +2,6 @@ module.exports = {
   theme: {
     
     extend: {
-      fontFamily: {
-        'body': [ 'Arial', 'Roboto', '"Open Sans"'],
-       },
       colors: {
         main: {
           500: '#afd743',      //main green
