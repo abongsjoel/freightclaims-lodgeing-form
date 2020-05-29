@@ -4,7 +4,7 @@ import Next from '../../Atoms/Next';
 import Previous from '../../Atoms/Previous';
 
 const Nav = () => (
-    <div>
+    <div className="flex justify-between">
         <Previous />
         <Next />
     </div>

@@ -7,7 +7,7 @@ const Previous = () => (
         <div className="transform rotate-180">
             <Arrow />
         </div>
-        <p className="text-md font-semibold mr-2">Previous</p>
+        <p className="text-sm ml-2 font-semibold">Previous</p>
     </div>
 );
 

@@ -4,7 +4,7 @@ import Arrow from '../Arrow';
 
 const Next = () => (
     <div className="text-main-500 flex items-center">
-        <p className="text-md font-semibold mr-2">Next</p>
+        <p className="text-sm mr-2 font-semibold">Next</p>
         <Arrow />
     </div>
 );
