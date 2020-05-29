@@ -1,8 +1,10 @@
 import React from 'react';
+import Arrow from '../Arrow';
 
 const Next = () => (
-    <div>
-        <p className="text-md text-main-500 font-semibold">Next</p>
+    <div className="text-main-500">
+        <p className="text-md font-semibold">Next</p>
+        <Arrow />
     </div>
 );
 
