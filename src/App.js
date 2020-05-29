@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
+import Layout from './HOC/Layout';
 
 function App() {
   return (
     <div>
-      <p className="text-green-500">Hello and welcome</p>
+      <Layout>
+        <p>I am the main content</p>
+      </Layout>
     </div>
   );
 }

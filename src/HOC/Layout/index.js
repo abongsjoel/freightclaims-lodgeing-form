@@ -1,17 +1,17 @@
 import React from 'react';
 
-import Header from '../../Organisms/Header'
-import Footer from '../../Organisms/Footer';
+import Logo from '../../Atoms/Logo';
 
 import Aux from '../Auxilary'
 
 const Layout = (props) => (
   <Aux>
-      <Header />
+      <div>
+        <Logo />
+      </div>
       <main className="font-body">
           {props.children}
       </main>
-      <Footer />
   </Aux>
 );
 
