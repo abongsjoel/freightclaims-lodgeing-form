@@ -1,19 +1,17 @@
 import React from 'react';
 
-import Card from '../../Molecules/Card';
-import FormElementTitle from '../../Atoms/FormElementTitle';
 import InputRadio from '../../Atoms/InputElements/InputRadio';
 
+import Aux from '../../HOC/Auxilary';
+import Screens from './Screens';
+
 const LandingScreen = () => (
-    <div className="cardPositioning">
-        <Card>
-            <FormElementTitle required={true}>I am a ?</FormElementTitle>
-            <div className="mb-10">
-                <InputRadio type="radio" id="carrier" name="clientType" value="carrier" label="Carrier" />
-                <InputRadio type="radio" id="claimant" name="clientType" value="claimant" label="Claimant"/>
-            </div>
-        </Card>
-    </div>  
+    <Aux>
+        <Screens title="I am a ?" required="true">
+            <InputRadio type="radio" id="carrier" name="clientType" value="carrier" label="Carrier" />
+            <InputRadio type="radio" id="claimant" name="clientType" value="claimant" label="Claimant"/>
+        </Screens>
+    </Aux>
 );
 
 export default LandingScreen;

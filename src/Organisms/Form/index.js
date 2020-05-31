@@ -7,8 +7,8 @@ import Screen1 from './Screen1';
 const Form = () => {
     return (
         <Aux>
-            {/* <LandingScreen /> */}
-            <Screen1 />
+            <LandingScreen />
+            {/* <Screen1 /> */}
         </Aux>  
     );
 }
