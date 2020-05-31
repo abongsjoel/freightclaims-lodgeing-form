@@ -1,8 +1,8 @@
 import React from 'react';
 
-const InputText = ({instruction}) => (
+const InputText = ({instruction, type}) => (
     <div>
-        <input type="text" className="input" />
+        <input type={type} className="input" />
         <p className="text-xs text-neutral-900 font-light -mt-3">{instruction}</p>
         
     </div>
