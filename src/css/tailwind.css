@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
+
+.titleFont {
+    font-family: 'Baloo Da 2';
+}
 @tailwind utilities;
