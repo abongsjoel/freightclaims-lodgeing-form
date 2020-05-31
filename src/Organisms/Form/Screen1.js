@@ -4,6 +4,7 @@ import Card from '../../Molecules/Card';
 import FormElementTitle from '../../Atoms/FormElementTitle';
 import InputText from '../../Atoms/InputElements/InputText';
 import Number from '../../Atoms/Number';
+import NavMap from '../../Molecules/NavMap';
 
 const Screen1 = () => (
     <div className="cardPositioning flex-col content-between">
@@ -14,6 +15,7 @@ const Screen1 = () => (
                 <InputText instruction="Enter your name here" />
             </div>
         </Card>
+        <NavMap />
     </div>  
 );
 
