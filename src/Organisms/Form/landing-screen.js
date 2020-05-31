@@ -1,12 +1,12 @@
 import React from 'react';
 
 import Card from '../../Molecules/Card';
-import TitleFont from '../../Atoms/TitleFont';
+import FormElementTitle from '../../Atoms/FormElementTitle';
 
 const LandingScreen = () => (
     <div className="w-full h-screen flex justify-center items-center">
         <Card>
-            <TitleFont required={true}>I am a ?</TitleFont>
+            <FormElementTitle required={true}>I am a ?</FormElementTitle>
         </Card>
     </div>  
 );
