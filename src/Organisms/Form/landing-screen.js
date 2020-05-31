@@ -2,7 +2,6 @@ import React from 'react';
 
 import InputRadio from '../../Atoms/InputElements/InputRadio';
 
-import Aux from '../../HOC/Auxilary';
 import Screens from './Screens';
 
 const LandingScreen = () => (

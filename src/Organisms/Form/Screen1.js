@@ -1,22 +1,17 @@
 import React from 'react';
 
-import Card from '../../Molecules/Card';
-import FormElementTitle from '../../Atoms/FormElementTitle';
 import InputText from '../../Atoms/InputElements/InputText';
-import Number from '../../Atoms/Number';
-import NavMap from '../../Molecules/NavMap';
+import FormScreens from './FormScreens';
 
 const Screen1 = () => (
-    <div className="cardPositioning flex-col content-between">
-        <Number number="1" />
-        <Card>
-            <FormElementTitle required={true}>What is your name ?</FormElementTitle>
-            <div className="mb-10">
-                <InputText instruction="Enter your name here" />
-            </div>
-        </Card>
-        <NavMap />
-    </div>  
+    <FormScreens 
+        number = "1"
+        title="What is your name ?"
+        required={true}
+        instruction="Enter your name here"
+    >
+        <InputText instruction="Enter your name here" />
+    </FormScreens>
 );
 
 export default Screen1;
