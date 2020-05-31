@@ -8,7 +8,6 @@ const Screen1 = () => (
         number = "1"
         title="What is your name ?"
         required={true}
-        instruction="Enter your name here"
     >
         <InputText instruction="Enter your name here" />
     </FormScreens>
