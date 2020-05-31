@@ -10,6 +10,7 @@ module.exports = {
           500: '#cec1f2',     //sec purple
         },
         neutral: {
+          500: '#bdbdbd',       //FormElement borders
           900: '#4b5156'        //Logo gray
         },
       },
