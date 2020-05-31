@@ -17,4 +17,13 @@
     @apply outline-none;
 }
 
+.number {
+    color: rgba(206, 193, 242, 0.2);
+    font-size: 100px;
+    line-height: 38px;
+    font-family: 'Baloo Da 2';
+    font-style: normal;
+    font-weight: bold;
+}
+
 @tailwind utilities;

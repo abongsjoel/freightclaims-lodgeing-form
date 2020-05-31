@@ -3,9 +3,11 @@ import React from 'react';
 import Card from '../../Molecules/Card';
 import FormElementTitle from '../../Atoms/FormElementTitle';
 import InputText from '../../Atoms/InputElements/InputText';
+import Number from '../../Atoms/Number';
 
 const Screen1 = () => (
-    <div className="cardPositioning">
+    <div className="cardPositioning flex-col content-between">
+        <Number number="1" />
         <Card>
             <FormElementTitle required={true}>What is your name ?</FormElementTitle>
             <div className="mb-10">

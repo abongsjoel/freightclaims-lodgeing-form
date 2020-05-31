@@ -636,6 +636,15 @@ video {
   outline: 0;
 }
 
+.number {
+  color: rgba(206, 193, 242, 0.2);
+  font-size: 100px;
+  line-height: 38px;
+  font-family: 'Baloo Da 2';
+  font-style: normal;
+  font-weight: bold;
+}
+
 .space-y-0 > :not(template) ~ :not(template) {
   --space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--space-y-reverse)));
