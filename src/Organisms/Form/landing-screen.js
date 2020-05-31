@@ -5,7 +5,7 @@ import FormElementTitle from '../../Atoms/FormElementTitle';
 import InputRadio from '../../Atoms/InputElements/InputRadio';
 
 const LandingScreen = () => (
-    <div className="w-full h-screen flex justify-center items-center">
+    <div className="cardPositioning">
         <Card>
             <FormElementTitle required={true}>I am a ?</FormElementTitle>
             <div className="mb-10">

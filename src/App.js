@@ -9,7 +9,7 @@ function App() {
       <Layout>
         <Form />
       </Layout>
-    </div>
+    </div>  
   );
 }
 

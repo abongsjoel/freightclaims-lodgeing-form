@@ -4,4 +4,17 @@
 .titleFont {
     font-family: 'Baloo Da 2';
 }
+
+.cardPositioning {
+    @apply w-full h-screen flex justify-center items-center;
+}
+
+.input {
+    @apply border border-neutral-500 px-2 py-1 my-4 w-full;
+}
+
+.input:focus {
+    @apply outline-none;
+}
+
 @tailwind utilities;
