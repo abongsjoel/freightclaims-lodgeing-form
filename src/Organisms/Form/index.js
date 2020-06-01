@@ -18,14 +18,13 @@ const Form = () => {
         if (show > 0) {
             setShow(preShow => preShow - 1);
         }
-        console.log("show is now: ", show);
     }
 
     const nextHandler = () => {
         if (show < max) {
             setShow(preShow => preShow + 1)
         }
-        console.log("show is now: ", show);
+
     }
 
     const submitHandler = () => {
@@ -39,19 +38,19 @@ const Form = () => {
             displayScreen = <LandingScreen next={nextHandler} hidePrevious={true} />;
             break;
         case 1:
-            displayScreen = <Screen1 previous={previousHandler} next={nextHandler} />
+            displayScreen = <Screen1 previous={previousHandler} next={nextHandler} number={show} />
             break;
         case 2:
-            displayScreen = <Screen2 previous={previousHandler} next={nextHandler} />
+            displayScreen = <Screen2 previous={previousHandler} next={nextHandler} number={show} />
             break;
         case 3:
-            displayScreen = <Screen3 previous={previousHandler} next={nextHandler} />
+            displayScreen = <Screen3 previous={previousHandler} next={nextHandler} number={show} />
             break;
         case 4:
-            displayScreen = <Screen4 previous={previousHandler} next={nextHandler} />
+            displayScreen = <Screen4 previous={previousHandler} next={nextHandler} number={show} />
             break;
         case 5:
-            displayScreen = <Screen5 previous={previousHandler} submit={submitHandler} />
+            displayScreen = <Screen5 previous={previousHandler} submit={submitHandler} number={show} />
             break;
         default:
             displayScreen = <LandingScreen />;
