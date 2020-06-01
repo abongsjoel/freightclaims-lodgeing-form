@@ -3,10 +3,10 @@ import React from 'react';
 import Next from '../../Atoms/Next';
 import Previous from '../../Atoms/Previous';
 
-const Nav = () => (
+const Nav = ({previous, next}) => (
     <div className="flex justify-between">
-        <Previous />
-        <Next />
+        <Previous clicked={previous} />
+        <Next clicked={next} />
     </div>
 );
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // import Aux from '../../HOC/Auxilary';
 import LandingScreen from './landing-screen';
@@ -10,31 +10,43 @@ import Screen5 from './Screen5';
 
 const Form = () => {
 
-    const [show, setShow] = ('0')
+    const [show, setShow] = useState(0)
+
+    const max = 5;
 
     const previousHandler = () => {
-        
+        if (show > 0) {
+            setShow(preShow => preShow - 1);
+        }
+        console.log("show is now: ", show);
+    }
+
+    const nextHandler = () => {
+        if (show < max) {
+            setShow(preShow => preShow + 1)
+        }
+        console.log("show is now: ", show);
     }
 
     let displayScreen = null;
 
     switch(show) {
-        case '0':
-            displayScreen = <LandingScreen />;
+        case 0:
+            displayScreen = <LandingScreen previous={previousHandler} next={nextHandler} />;
             break;
-        case '1':
+        case 1:
             displayScreen = <Screen1 />
             break;
-        case '2':
+        case 2:
             displayScreen = <Screen2 />
             break;
-        case '3':
+        case 3:
             displayScreen = <Screen3 />
             break;
-        case '4':
+        case 4:
             displayScreen = <Screen4 />
             break;
-        case '5':
+        case 5:
             displayScreen = <Screen5 />
             break;
         default:

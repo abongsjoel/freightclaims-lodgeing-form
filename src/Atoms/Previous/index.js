@@ -2,8 +2,8 @@ import React from 'react';
 
 import Arrow from '../Arrow';
 
-const Previous = () => (
-    <div className="text-sec-500 flex items-center cursor-pointer">
+const Previous = ({clicked}) => (
+    <div onClick={clicked} className="text-sec-500 flex items-center cursor-pointer">
         <div className="transform rotate-180">
             <Arrow />
         </div>
