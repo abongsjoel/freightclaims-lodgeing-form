@@ -7,7 +7,6 @@ const Card = (props) => (
         <div className="m-10">
             {props.children}
         </div>
-        
         <Nav />  
     </div>
 );
