@@ -27,6 +27,10 @@ const Form = () => {
 
     }
 
+    const dotClickedHandler = () => {
+        console.log("you clicked the dot");
+    }
+
     const submitHandler = () => {
         console.log("It's time to submit");
     }
@@ -38,19 +42,19 @@ const Form = () => {
             displayScreen = <LandingScreen next={nextHandler} hidePrevious={true} />;
             break;
         case 1:
-            displayScreen = <Screen1 previous={previousHandler} next={nextHandler} number={show} />
-            break;
-        case 2:
-            displayScreen = <Screen2 previous={previousHandler} next={nextHandler} number={show} />
-            break;
-        case 3:
-            displayScreen = <Screen3 previous={previousHandler} next={nextHandler} number={show} />
-            break;
-        case 4:
-            displayScreen = <Screen4 previous={previousHandler} next={nextHandler} number={show} />
+            displayScreen = <Screen1 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
+            break; 
+        case 2: 
+            displayScreen = <Screen2 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
+            break; 
+        case 3: 
+            displayScreen = <Screen3 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
+            break; 
+        case 4: 
+            displayScreen = <Screen4 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
             break;
         case 5:
-            displayScreen = <Screen5 previous={previousHandler} submit={submitHandler} number={show} />
+            displayScreen = <Screen5 previous={previousHandler} submit={submitHandler} number={show} dotClicked={dotClickedHandler} />
             break;
         default:
             displayScreen = <LandingScreen />;

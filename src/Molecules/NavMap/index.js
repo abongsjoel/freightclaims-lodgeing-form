@@ -7,8 +7,6 @@ const NavMap = ({number, dotClicked}) => (
         <div className="w-full flex justify-center items-center relative">
             <hr className="w-full bg-neutral-500 border" />
             <div className="w-full flex justify-between absolute items-center">
-                {console.log("number is: ", number)}
-                debugger
                 <Dot active={Number(number) === 1} clicked={dotClicked} />
                 <Dot active={Number(number) === 2} clicked={dotClicked} />
                 <Dot active={Number(number) === 3} clicked={dotClicked} />

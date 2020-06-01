@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Dot = ({active, clicked}) => {
+
     let dot = <div className="bg-neutral-900 w-2 h-2 rounded-full" onClick={clicked}></div>
     console.log("active is : ", active)
 

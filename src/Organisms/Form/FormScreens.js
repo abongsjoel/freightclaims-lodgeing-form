@@ -29,7 +29,7 @@ const FormScreens = ({
         >
             {props.children}
         </Screens>
-        <NavMap number={number} />
+        <NavMap number={number} dotClicked={dotClicked} />
     </div>  
 );
 
