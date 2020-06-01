@@ -27,8 +27,8 @@ const Form = () => {
 
     }
 
-    const dotClickedHandler = () => {
-        setShow(2);
+    const dotClickedHandler = (value) => {
+        setShow(value);
     }
 
     const submitHandler = () => {
