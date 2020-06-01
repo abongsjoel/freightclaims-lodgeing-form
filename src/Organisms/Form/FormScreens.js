@@ -17,6 +17,7 @@ const FormScreens = ({
     }) => (
 
     <div className="cardPositioning flex-col content-between">
+        {/* <p> I am the form screen</p> */}
         <Number number={number} />
         <Screens 
             title={title} 

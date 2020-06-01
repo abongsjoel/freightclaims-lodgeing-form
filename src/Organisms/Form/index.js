@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import {useTransition, animated} from 'react-spring';
+
 
 // import Aux from '../../HOC/Auxilary';
 import LandingScreen from './landing-screen';
@@ -37,6 +39,7 @@ const Form = () => {
 
     let displayScreen = null;
 
+
     switch(show) {
         case 0:
             displayScreen = <LandingScreen next={nextHandler} hidePrevious={true} />;
@@ -61,6 +64,8 @@ const Form = () => {
     }
 
     return displayScreen;
+
+
 }
 
 export default Form;
