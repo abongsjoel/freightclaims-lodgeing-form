@@ -28,7 +28,7 @@ const Form = () => {
     }
 
     const dotClickedHandler = () => {
-        console.log("you clicked the dot");
+        setShow(2);
     }
 
     const submitHandler = () => {
