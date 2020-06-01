@@ -28,6 +28,10 @@ const Form = () => {
         console.log("show is now: ", show);
     }
 
+    const submitHandler = () => {
+        console.log("It's time to submit");
+    }
+
     let displayScreen = null;
 
     switch(show) {
@@ -47,7 +51,7 @@ const Form = () => {
             displayScreen = <Screen4 previous={previousHandler} next={nextHandler} />
             break;
         case 5:
-            displayScreen = <Screen5 previous={previousHandler}/>
+            displayScreen = <Screen5 previous={previousHandler} submit={submitHandler} />
             break;
         default:
             displayScreen = <LandingScreen />;
