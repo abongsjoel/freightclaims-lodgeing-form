@@ -47,7 +47,7 @@ const Form = () => {
             displayScreen = <Screen4 previous={previousHandler} next={nextHandler} />
             break;
         case 5:
-            displayScreen = <Screen5 />
+            displayScreen = <Screen5 previous={previousHandler}/>
             break;
         default:
             displayScreen = <LandingScreen />;
