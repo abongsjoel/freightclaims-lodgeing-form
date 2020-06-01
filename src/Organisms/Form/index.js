@@ -32,7 +32,7 @@ const Form = () => {
 
     switch(show) {
         case 0:
-            displayScreen = <LandingScreen previous={previousHandler} next={nextHandler} />;
+            displayScreen = <LandingScreen next={nextHandler} />;
             break;
         case 1:
             displayScreen = <Screen1 previous={previousHandler} next={nextHandler} />
