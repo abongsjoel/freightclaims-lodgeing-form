@@ -12,19 +12,22 @@ import Screen5 from './Screen5';
 
 const Form = () => {
 
-    const [show, setShow] = useState(0)
+    const [show, setShow] = useState(0);
+    const [direction, setDirection] = useState('forward');
 
     const max = 5;
 
     const previousHandler = () => {
         if (show > 0) {
             setShow(preShow => preShow - 1);
+            setDirection('backward');
         }
     }
 
     const nextHandler = () => {
         if (show < max) {
-            setShow(preShow => preShow + 1)
+            setShow(preShow => preShow + 1);
+            setDirection('forward');
         }
 
     }
@@ -37,59 +40,88 @@ const Form = () => {
         console.log("It's time to submit");
     }
 
-    let displayScreen = null;
+    // let displayScreen = null;
 
 
-    switch(show) {
-        case 0:
-            displayScreen = <LandingScreen next={nextHandler} hidePrevious={true} />;
-            break;
-        case 1:
-            displayScreen = <Screen1 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
-            break; 
-        case 2: 
-            displayScreen = <Screen2 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
-            break; 
-        case 3: 
-            displayScreen = <Screen3 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
-            break; 
-        case 4: 
-            displayScreen = <Screen4 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
-            break;
-        case 5:
-            displayScreen = <Screen5 previous={previousHandler} submit={submitHandler} number={show} dotClicked={dotClickedHandler} />
-            break;
-        default:
-            displayScreen = <LandingScreen />;
-    }
+    // switch(show) {
+    //     case 0:
+    //         displayScreen = <LandingScreen next={nextHandler} hidePrevious={true} />;
+    //         break;
+    //     case 1:
+    //         displayScreen = <Screen1 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
+    //         break; 
+    //     case 2: 
+    //         displayScreen = <Screen2 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
+    //         break; 
+    //     case 3: 
+    //         displayScreen = <Screen3 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
+    //         break; 
+    //     case 4: 
+    //         displayScreen = <Screen4 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
+    //         break;
+    //     case 5:
+    //         displayScreen = <Screen5 previous={previousHandler} submit={submitHandler} number={show} dotClicked={dotClickedHandler} />
+    //         break;
+    //     default:
+    //         displayScreen = <LandingScreen />;
+    // }
 
     // return displayScreen;
 
-      const pages = [
-            ({ style }) => <animated.div style={{ ...style }}><LandingScreen next={nextHandler} hidePrevious={true} /></animated.div>,
-            ({ style }) => <animated.div style={{ ...style }}><Screen1 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
-            ({ style }) => <animated.div style={{ ...style }}><Screen2 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
-            ({ style }) => <animated.div style={{ ...style }}><Screen3 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
-            ({ style }) => <animated.div style={{ ...style }}><Screen4 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
-            ({ style }) => <animated.div style={{ ...style }}><Screen5 previous={previousHandler} submit={submitHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
-        ]
+    const pages = [
+        ({ style }) => <animated.div style={{ ...style }}><LandingScreen next={nextHandler} hidePrevious={true} /></animated.div>,
+        ({ style }) => <animated.div style={{ ...style }}><Screen1 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
+        ({ style }) => <animated.div style={{ ...style }}><Screen2 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
+        ({ style }) => <animated.div style={{ ...style }}><Screen3 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
+        ({ style }) => <animated.div style={{ ...style }}><Screen4 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
+        ({ style }) => <animated.div style={{ ...style }}><Screen5 previous={previousHandler} submit={submitHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
+    ]
+
+            // const transitions = useTransition(show, p => p, {
+            //     from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
+            //     enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+            //     leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
+            // })
+            // return (
+            //     <div className="simple-trans-main">
+            //     {transitions.map(({ item, props, key }) => {
+            //         const Page = pages[item]
+            //         return <Page key={key} style={props} />
+            //     })}
+            //     </div>
+            // )
   
-    // const [index, set] = useState(0)
-    // const onClick = useCallback(() => set(state => (state + 1) % 3), [])
     const transitions = useTransition(show, p => p, {
       from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
       enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
       leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
     })
-    return (
-      <div className="simple-trans-main">
-        {transitions.map(({ item, props, key }) => {
-          const Page = pages[item]
-          return <Page key={key} style={props} />
-        })}
-      </div>
-    )
+    const transitionsBackward = useTransition(show, p => p, {
+      from: { opacity: 0, transform: 'translate3d(-100%,0,0)' },
+      enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+      leave: { opacity: 0, transform: 'translate3d(50%,0,0)' },
+    })
 
+    let screen = null;
+
+    if (direction === "forward") {
+        screen = transitions.map(({ item, props, key }) => {
+            const Page = pages[item]
+            return <Page key={key} style={props} />
+          })
+        
+    } else if (direction === "backward") {
+        screen = transitionsBackward.map(({ item, props, key }) => {
+            const Page = pages[item]
+            return <Page key={key} style={props} />
+          })
+    }
+    
+    return (
+        <div className="simple-trans-main">
+          {screen}
+        </div>
+      )
 
 }
 
