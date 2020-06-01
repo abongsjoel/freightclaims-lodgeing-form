@@ -34,6 +34,7 @@ const Form = () => {
 
     const dotClickedHandler = (value) => {
         setShow(value);
+        setDirection('downward');
     }
 
     const submitHandler = () => {
@@ -76,20 +77,6 @@ const Form = () => {
         ({ style }) => <animated.div style={{ ...style }}><Screen4 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
         ({ style }) => <animated.div style={{ ...style }}><Screen5 previous={previousHandler} submit={submitHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
     ]
-
-            // const transitions = useTransition(show, p => p, {
-            //     from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
-            //     enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-            //     leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
-            // })
-            // return (
-            //     <div className="simple-trans-main">
-            //     {transitions.map(({ item, props, key }) => {
-            //         const Page = pages[item]
-            //         return <Page key={key} style={props} />
-            //     })}
-            //     </div>
-            // )
   
     const transitions = useTransition(show, p => p, {
       from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
@@ -100,6 +87,11 @@ const Form = () => {
       from: { opacity: 0, transform: 'translate3d(-100%,0,0)' },
       enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
       leave: { opacity: 0, transform: 'translate3d(50%,0,0)' },
+    })
+    const transitionsDownward = useTransition(show, p => p, {
+      from: { opacity: 0, transform: 'translate3d(0%,-100%,0)' },
+      enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+      leave: { opacity: 0, transform: 'translate3d(0%,50%,0)' },
     })
 
     let screen = null;
@@ -112,6 +104,11 @@ const Form = () => {
         
     } else if (direction === "backward") {
         screen = transitionsBackward.map(({ item, props, key }) => {
+            const Page = pages[item]
+            return <Page key={key} style={props} />
+          })
+    } else {
+        screen = transitionsDownward.map(({ item, props, key }) => {
             const Page = pages[item]
             return <Page key={key} style={props} />
           })
