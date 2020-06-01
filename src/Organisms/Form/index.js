@@ -35,16 +35,16 @@ const Form = () => {
             displayScreen = <LandingScreen previous={previousHandler} next={nextHandler} />;
             break;
         case 1:
-            displayScreen = <Screen1 />
+            displayScreen = <Screen1 previous={previousHandler} next={nextHandler} />
             break;
         case 2:
-            displayScreen = <Screen2 />
+            displayScreen = <Screen2 previous={previousHandler} next={nextHandler} />
             break;
         case 3:
-            displayScreen = <Screen3 />
+            displayScreen = <Screen3 previous={previousHandler} next={nextHandler} />
             break;
         case 4:
-            displayScreen = <Screen4 />
+            displayScreen = <Screen4 previous={previousHandler} next={nextHandler} />
             break;
         case 5:
             displayScreen = <Screen5 />
