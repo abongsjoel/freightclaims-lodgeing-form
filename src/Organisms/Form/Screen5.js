@@ -1,10 +1,10 @@
 import React from 'react';
 
 import InputText from '../../Atoms/InputElements/InputText';
-import FormScreens from './FormScreens';
+import Screens from './Screens';
 
 const Screen5 = ({previous, submit, dotClicked }) => (
-    <FormScreens 
+    <Screens 
         number = "5"
         title="Number of freights per month ?"
         required={true}
@@ -14,7 +14,7 @@ const Screen5 = ({previous, submit, dotClicked }) => (
         dotClicked={dotClicked}
     >
         <InputText instruction="Enter the number of freights per month here" type="number" />
-    </FormScreens>
+    </Screens>
 );
 
 export default Screen5;

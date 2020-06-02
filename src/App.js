@@ -6,9 +6,7 @@ import Form from './Organisms/Form';
 function App() {
   return (
     <div>
-      {/* <Layout> */}
         <Form />
-      {/* </Layout> */}
     </div>  
   );
 }

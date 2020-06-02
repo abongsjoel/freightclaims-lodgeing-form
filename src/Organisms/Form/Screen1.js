@@ -1,10 +1,10 @@
 import React from 'react';
 
 import InputText from '../../Atoms/InputElements/InputText';
-import FormScreens from './FormScreens';
+import Screens from './Screens';
 
 const Screen1 = ({previous, next, number, dotClicked, fullNames, initialValue}) => (
-    <FormScreens 
+    <Screens 
         number = {number}
         title="What is your name ?"
         required={true}
@@ -13,7 +13,7 @@ const Screen1 = ({previous, next, number, dotClicked, fullNames, initialValue}) 
         dotClicked={dotClicked} 
     >  
         <InputText textChanged={fullNames} initialValue={initialValue} instruction="Enter your name here" />
-    </FormScreens>
+    </Screens>  
 );
 
 export default Screen1;

@@ -1,10 +1,10 @@
 import React from 'react';
 
 import InputText from '../../Atoms/InputElements/InputText';
-import FormScreens from './FormScreens';
+import Screens from './Screens';
 
 const Screen2 = ({previous, next, dotClicked}) => (
-    <FormScreens 
+    <Screens 
         number = "2"
         title="What is your email ?"
         required={true}
@@ -13,7 +13,7 @@ const Screen2 = ({previous, next, dotClicked}) => (
         dotClicked={dotClicked} 
     >
         <InputText instruction="Enter your email address here" />
-    </FormScreens>
+    </Screens>
 );
 
 export default Screen2;
