@@ -131,59 +131,47 @@ const Form = () => {
           </animated.div>
         ),
     ]
-  
-    const transitions = useTransition(show, p => p, {
-      from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
-      enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-      leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
-    })
-    const transitionsBackward = useTransition(show, p => p, {
-      from: { opacity: 0, transform: 'translate3d(-100%,0,0)' },
-      enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-      leave: { opacity: 0, transform: 'translate3d(50%,0,0)' },
-    })
-    const transitionsDownward = useTransition(show, p => p, {
-      from: { opacity: 0, transform: 'translate3d(0%,-100%,0)' },
-      enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-      leave: { opacity: 0, transform: 'translate3d(0%,50%,0)' },
-    })
-    const transitionsUpward = useTransition(show, p => p, {
-      from: { opacity: 0, transform: 'translate3d(0%,100%,0)' },
-      enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-      leave: { opacity: 0, transform: 'translate3d(0%,-50%,0)' },
-    })
 
-    let screen = null;
+    let playTransition = null;
 
     if (direction === "forward") {
-        screen = transitions.map(({ item, props, key }) => {
-            const Page = pages[item]
-            return <Page key={key} style={props} />
-          })
-    } else if (direction === "backward") {
-        screen = transitionsBackward.map(({ item, props, key }) => {
-            const Page = pages[item]
-            return <Page key={key} style={props} />
-          })
-    } else if (direction === "downward") {
-        screen = transitionsDownward.map(({ item, props, key }) => {
-            const Page = pages[item]
-            return <Page key={key} style={props} />
-          })
-    } else {
-        screen = transitionsUpward.map(({ item, props, key }) => {
+      playTransition = {
+        from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
+        enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+        leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
+      }
+  } else if (direction === "backward") {
+      playTransition = {
+        from: { opacity: 0, transform: 'translate3d(-100%,0,0)' },
+        enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+        leave: { opacity: 0, transform: 'translate3d(50%,0,0)' },
+      }
+  } else if (direction === "downward") {
+      playTransition = {
+        from: { opacity: 0, transform: 'translate3d(0%,-100%,0)' },
+        enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+        leave: { opacity: 0, transform: 'translate3d(0%,50%,0)' },
+      }
+  } else {
+      playTransition =  {
+        from: { opacity: 0, transform: 'translate3d(0%,100%,0)' },
+        enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+        leave: { opacity: 0, transform: 'translate3d(0%,-50%,0)' },
+      }
+  }
+  
+  const transitions = useTransition(show, p => p, playTransition )
+  
+  return (
+    <Layout number={show} dotClicked={dotClickedHandler}>
+      <div className="simple-trans-main">
+        {transitions.map(({ item, props, key }) => {
           const Page = pages[item]
           return <Page key={key} style={props} />
-        })
-    }
-    
-    return (
-      <Layout number={show} dotClicked={dotClickedHandler}>
-        <div className="simple-trans-main">
-          {screen}
-        </div>
-      </Layout>
-      )
+        })}
+      </div>
+    </Layout>
+    )
 
 }
 
