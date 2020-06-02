@@ -15,6 +15,8 @@ const Form = () => {
     const [show, setShow] = useState(0);
     const [direction, setDirection] = useState('forward');
 
+    const [clientType, setClientType] = useState('');
+
     const max = 5;
 
     const previousHandler = () => {
@@ -38,7 +40,10 @@ const Form = () => {
     }
 
     const submitHandler = () => {
-        console.log("It's time to submit");
+        const data = {
+          clientType
+        }
+        console.log("It's time to submit ", data);
     }
 
     // let displayScreen = null;
@@ -70,7 +75,7 @@ const Form = () => {
     // return displayScreen;
 
     const pages = [
-        ({ style }) => <animated.div style={{ ...style }}><LandingScreen next={nextHandler} hidePrevious={true} /></animated.div>,
+        ({ style }) => <animated.div style={{ ...style }}><LandingScreen next={nextHandler} hidePrevious={true} clientType={event => setClientType(event.target.value)} /></animated.div>,
         ({ style }) => <animated.div style={{ ...style }}><Screen1 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
         ({ style }) => <animated.div style={{ ...style }}><Screen2 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
         ({ style }) => <animated.div style={{ ...style }}><Screen3 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const InputRadio = ({type, id, name, value, label}) => (
+const InputRadio = ({type, id, name, value, label, inputChanged}) => (
     <div className="input flex items-center">
-        <input type="radio" id={id} name={name} value={value} />
+        <input type="radio" id={id} name={name} value={value} onChange={(event) => inputChanged(event)} />
         <label htmlFor={id} className="ml-3 text-sm text-neutral-900 font-medium">{label}</label>
     </div>
 );
