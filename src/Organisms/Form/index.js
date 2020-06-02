@@ -40,9 +40,10 @@ const Form = () => {
 
     }
 
-    const dotClickedHandler = (value) => {
+    const dotClickedHandler = (value, activeScreen) => {
         setShow(value);
-        setDirection('downward');
+        console.log("value: %d, activeScreen: %d", value, Number(activeScreen));
+        setDirection((value > Number(activeScreen)) ? 'downward' : 'upward' );
     }
 
     const submitHandler = () => {
@@ -135,6 +136,11 @@ const Form = () => {
       enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
       leave: { opacity: 0, transform: 'translate3d(0%,50%,0)' },
     })
+    const transitionsUpward = useTransition(show, p => p, {
+      from: { opacity: 0, transform: 'translate3d(0%,100%,0)' },
+      enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+      leave: { opacity: 0, transform: 'translate3d(0%,-50%,0)' },
+    })
 
     let screen = null;
 
@@ -149,11 +155,16 @@ const Form = () => {
             const Page = pages[item]
             return <Page key={key} style={props} />
           })
-    } else {
+    } else if (direction === "downward") {
         screen = transitionsDownward.map(({ item, props, key }) => {
             const Page = pages[item]
             return <Page key={key} style={props} />
           })
+    } else {
+        screen = transitionsUpward.map(({ item, props, key }) => {
+          const Page = pages[item]
+          return <Page key={key} style={props} />
+        })
     }
     
     return (
