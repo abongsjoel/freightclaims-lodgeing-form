@@ -51,18 +51,62 @@ const Form = () => {
     const pages = [
         ({ style }) => (
             <animated.div style={{ ...style }}>
-              <LandingScreen next={nextHandler} hidePrevious={true} clientType={event => setClientType(event.target.value)} />
+              <LandingScreen 
+                next={nextHandler} 
+                hidePrevious={true} 
+                clientType={event => setClientType(event.target.value)} 
+              />
             </animated.div>
         ),
         ({ style }) => (
             <animated.div style={{ ...style }}>
-              <Screen1 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} freightType={event => setFreightType(event.target.value)} />
+              <Screen1 
+                previous={previousHandler} 
+                next={nextHandler} number={show} 
+                dotClicked={dotClickedHandler} 
+                freightType={event => setFreightType(event.target.value)} 
+              />
             </animated.div>
         ),
-        ({ style }) => <animated.div style={{ ...style }}><Screen2 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
-        ({ style }) => <animated.div style={{ ...style }}><Screen3 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
-        ({ style }) => <animated.div style={{ ...style }}><Screen4 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} freightType={event => setFreightType(event.target.value)} /></animated.div>,
-        ({ style }) => <animated.div style={{ ...style }}><Screen5 previous={previousHandler} submit={submitHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
+        ({ style }) => (
+          <animated.div style={{ ...style }}>
+            <Screen2 
+              previous={previousHandler} 
+              next={nextHandler} 
+              number={show} 
+              dotClicked={dotClickedHandler} 
+            />
+          </animated.div>
+        ),
+        ({ style }) => (
+          <animated.div style={{ ...style }}>
+            <Screen3 
+              previous={previousHandler} 
+              next={nextHandler} 
+              number={show} 
+              dotClicked={dotClickedHandler} 
+            />
+          </animated.div>
+        ),
+        ({ style }) => (
+          <animated.div style={{ ...style }}>
+            <Screen4 
+            previous={previousHandler} 
+            next={nextHandler} 
+            number={show} 
+            dotClicked={dotClickedHandler} 
+            freightType={event => setFreightType(event.target.value)} />
+          </animated.div>
+        ),
+        ({ style }) => (
+          <animated.div style={{ ...style }}>
+            <Screen5 
+            previous={previousHandler} 
+            submit={submitHandler} 
+            number={show} 
+            dotClicked={dotClickedHandler} />
+          </animated.div>
+        ),
     ]
   
     const transitions = useTransition(show, p => p, {
