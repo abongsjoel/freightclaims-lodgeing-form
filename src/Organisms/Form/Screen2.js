@@ -13,7 +13,7 @@ const Screen2 = ({previous, next, dotClicked}) => (
         dotClicked={dotClicked} 
     >
         <InputText instruction="Enter your email address here" />
-    </Screens>
+    </Screens>  
 );
 
 export default Screen2;
