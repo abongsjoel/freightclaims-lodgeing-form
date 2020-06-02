@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {useTransition, animated} from 'react-spring';
+import axios from '../../axios';
 
 
 // import Aux from '../../HOC/Auxilary';
@@ -52,6 +53,14 @@ const Form = () => {
           freightType,
           fullName,
         }
+
+        axios.put('/posts', data)
+          .then (response => {
+            console.log(response.data);
+          })
+          .catch (error => {
+            console.log("Error: Data could not be submitted for some reason ", error);
+          })
         console.log("It's time to submit ", data);
     }
 
