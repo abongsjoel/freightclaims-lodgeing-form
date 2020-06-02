@@ -16,6 +16,7 @@ const Form = () => {
     const [direction, setDirection] = useState('forward');
 
     const [clientType, setClientType] = useState('');
+    const [freightType, setFreightType] = useState('');
 
     const max = 5;
 
@@ -41,45 +42,26 @@ const Form = () => {
 
     const submitHandler = () => {
         const data = {
-          clientType
+          clientType,
+          freightType
         }
         console.log("It's time to submit ", data);
     }
 
-    // let displayScreen = null;
-
-
-    // switch(show) {
-    //     case 0:
-    //         displayScreen = <LandingScreen next={nextHandler} hidePrevious={true} />;
-    //         break;
-    //     case 1:
-    //         displayScreen = <Screen1 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
-    //         break; 
-    //     case 2: 
-    //         displayScreen = <Screen2 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
-    //         break; 
-    //     case 3: 
-    //         displayScreen = <Screen3 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
-    //         break; 
-    //     case 4: 
-    //         displayScreen = <Screen4 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} />
-    //         break;
-    //     case 5:
-    //         displayScreen = <Screen5 previous={previousHandler} submit={submitHandler} number={show} dotClicked={dotClickedHandler} />
-    //         break;
-    //     default:
-    //         displayScreen = <LandingScreen />;
-    // }
-
-    // return displayScreen;
-
     const pages = [
-        ({ style }) => <animated.div style={{ ...style }}><LandingScreen next={nextHandler} hidePrevious={true} clientType={event => setClientType(event.target.value)} /></animated.div>,
-        ({ style }) => <animated.div style={{ ...style }}><Screen1 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
+        ({ style }) => (
+            <animated.div style={{ ...style }}>
+              <LandingScreen next={nextHandler} hidePrevious={true} clientType={event => setClientType(event.target.value)} />
+            </animated.div>
+        ),
+        ({ style }) => (
+            <animated.div style={{ ...style }}>
+              <Screen1 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} freightType={event => setFreightType(event.target.value)} />
+            </animated.div>
+        ),
         ({ style }) => <animated.div style={{ ...style }}><Screen2 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
         ({ style }) => <animated.div style={{ ...style }}><Screen3 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
-        ({ style }) => <animated.div style={{ ...style }}><Screen4 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
+        ({ style }) => <animated.div style={{ ...style }}><Screen4 previous={previousHandler} next={nextHandler} number={show} dotClicked={dotClickedHandler} freightType={event => setFreightType(event.target.value)} /></animated.div>,
         ({ style }) => <animated.div style={{ ...style }}><Screen5 previous={previousHandler} submit={submitHandler} number={show} dotClicked={dotClickedHandler} /></animated.div>,
     ]
   
