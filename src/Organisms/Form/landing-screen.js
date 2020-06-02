@@ -16,7 +16,7 @@ const LandingScreen = ({next, hidePrevious, clientType, initialValue}) => (
                 inputChanged={clientType}
             />
             <InputRadio 
-                id="claimant" 
+                id="claimant"  
                 name="clientType" 
                 value="claimant" 
                 initialValue={initialValue} 

@@ -18,7 +18,7 @@ const FormScreens = ({
 
     <div className="cardPositioning flex-col content-between">
         {/* <p> I am the form screen</p> */}
-        <Number number={number} />
+        {/* <Number number={number} /> */}
         <Screens 
             title={title} 
             required={required} 
@@ -30,7 +30,7 @@ const FormScreens = ({
         >
             {props.children}
         </Screens>
-        <NavMap number={number} dotClicked={dotClicked} />
+        {/* <NavMap number={number} dotClicked={dotClicked} /> */}
     </div>  
 );
 

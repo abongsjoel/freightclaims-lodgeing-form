@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {useTransition, animated} from 'react-spring';
 import axios from '../../axios';
 
-
 // import Aux from '../../HOC/Auxilary';
 import LandingScreen from './landing-screen';
 import Screen1 from './Screen1';
@@ -10,6 +9,7 @@ import Screen2 from './Screen2';
 import Screen3 from './Screen3';
 import Screen4 from './Screen4';
 import Screen5 from './Screen5';
+import Layout from '../../HOC/Layout';
 
 const Form = () => {
 
@@ -177,9 +177,11 @@ const Form = () => {
     }
     
     return (
+      <Layout dotClicked={dotClickedHandler}>
         <div className="simple-trans-main">
           {screen}
         </div>
+      </Layout>
       )
 
 }
