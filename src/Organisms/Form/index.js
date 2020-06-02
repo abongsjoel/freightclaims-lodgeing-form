@@ -15,7 +15,7 @@ const Form = () => {
     const [show, setShow] = useState(0);
     const [direction, setDirection] = useState('forward');
 
-    const [clientType, setClientType] = useState('');
+    const [clientType, setClientType] = useState('Claimant');
     const [freightType, setFreightType] = useState('');
 
     const max = 5;
@@ -55,6 +55,7 @@ const Form = () => {
                 next={nextHandler} 
                 hidePrevious={true} 
                 clientType={event => setClientType(event.target.value)} 
+                initialValue={clientType}
               />
             </animated.div>
         ),
