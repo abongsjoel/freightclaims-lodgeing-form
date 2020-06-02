@@ -158,7 +158,6 @@ const Form = () => {
             const Page = pages[item]
             return <Page key={key} style={props} />
           })
-        
     } else if (direction === "backward") {
         screen = transitionsBackward.map(({ item, props, key }) => {
             const Page = pages[item]
@@ -186,4 +185,4 @@ const Form = () => {
 
 }
 
-export default Form;
+export default React.memo(Form);
