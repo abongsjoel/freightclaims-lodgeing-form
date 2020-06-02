@@ -1,13 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const InputText = ({instruction, type, initialValue, textChanged}) => {
+    const [fullName, setFullName] = useState('');
+
+    const nameChangedHandler = (event) => {
+      setFullName(event.target.value);
+    }
+
     return (
         <div>
             <input 
                 type={type} 
                 className="input" 
-                defaultValue={initialValue}
-                onChange={event => textChanged(event)} 
+                defaultValue={fullName}
+                onChange={event => nameChangedHandler(event)} 
             />
             <p className="text-xs text-neutral-900 font-light -mt-3">{instruction}</p>
             

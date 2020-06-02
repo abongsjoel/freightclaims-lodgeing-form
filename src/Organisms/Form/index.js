@@ -72,7 +72,7 @@ const Form = () => {
                 previous={previousHandler} 
                 next={nextHandler} number={show} 
                 dotClicked={dotClickedHandler} 
-                fullNames={event => nameChangedHandler(event)} 
+                fullNames={nameChangedHandler} 
                 initialValue={fullName}
               />
             </animated.div>
