@@ -96,7 +96,10 @@ const Form = () => {
             next={nextHandler} 
             number={show} 
             dotClicked={dotClickedHandler} 
-            freightType={event => setFreightType(event.target.value)} />
+            freightType={event => setFreightType(event.target.value)}
+            initialValue={freightType}
+          />
+
           </animated.div>
         ),
         ({ style }) => (
