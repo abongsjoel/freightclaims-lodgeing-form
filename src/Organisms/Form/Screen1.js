@@ -17,3 +17,4 @@ const Screen1 = ({previous, next, number, dotClicked, fullNames, initialValue}) 
 );
 
 export default Screen1;
+  

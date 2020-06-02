@@ -22,7 +22,7 @@ const Form = () => {
     const max = 5;
 
     const nameChangedHandler = (event) => {
-      // setFullName(event.target.value);
+      setFullName(event.target.value);
     }
 
     const previousHandler = () => {

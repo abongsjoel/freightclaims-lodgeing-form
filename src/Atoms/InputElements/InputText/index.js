@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 const InputText = ({instruction, type, initialValue, textChanged}) => {
     return (
@@ -6,7 +6,7 @@ const InputText = ({instruction, type, initialValue, textChanged}) => {
             <input 
                 type={type} 
                 className="input" 
-                value={initialValue}
+                defaultValue={initialValue}
                 onChange={event => textChanged(event)} 
             />
             <p className="text-xs text-neutral-900 font-light -mt-3">{instruction}</p>
