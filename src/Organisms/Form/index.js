@@ -177,7 +177,7 @@ const Form = () => {
     }
     
     return (
-      <Layout dotClicked={dotClickedHandler}>
+      <Layout number={show} dotClicked={dotClickedHandler}>
         <div className="simple-trans-main">
           {screen}
         </div>

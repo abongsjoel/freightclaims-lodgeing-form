@@ -6,21 +6,21 @@ import NavMap from '../../Molecules/NavMap';
 
 import Aux from '../Auxilary'
 
-const Layout = ({dotClicked, ...props}) => (
+const Layout = ({number, dotClicked, ...props}) => (
   <Aux>
       <div className="mt-5 ml-5 fixed">
         <Logo />
       </div>
       <div className="flex justify-center items-start relative">
         <div className="absolute mt-24">
-          <Number number="1" />
+          <Number number={number} />
         </div>
       </div>
       <main className="font-body">
           {props.children}
       </main>
       <div className="flex justify-center h-screen items-end pb-24  bg-green-500  ">
-          <NavMap number="1" dotClicked={dotClicked} />
+          <NavMap number={number} dotClicked={dotClicked} />
       </div>
   </Aux>
 );
