@@ -20,7 +20,7 @@ const Screens = ({
         next={next} 
         hidePrevious={hidePrevious}
         submit={submit} 
-        showSubmit={showSubmit}
+        showSubmit={showSubmit}  
         dotClicked={dotClicked} 
     >
         <FormElementTitle required={required}>{title}</FormElementTitle>

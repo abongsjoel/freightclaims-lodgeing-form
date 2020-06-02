@@ -9,7 +9,7 @@ import Aux from '../Auxilary'
 const Layout = ({number, dotClicked, ...props}) => {
 
   const show = (number === 0) ? "invisible" : "visible" ;
-  console.log(show)
+
   return (
       <Aux>
           <div className="mt-5 ml-5 fixed">
