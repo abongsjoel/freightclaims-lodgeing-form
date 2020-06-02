@@ -15,10 +15,15 @@ const Form = () => {
     const [show, setShow] = useState(0);
     const [direction, setDirection] = useState('forward');
 
-    const [clientType, setClientType] = useState('Claimant');
+    const [clientType, setClientType] = useState('');
     const [freightType, setFreightType] = useState('');
+    const [fullName, setFullName] = useState('');
 
     const max = 5;
+
+    const nameChangedHandler = (event) => {
+      // setFullName(event.target.value);
+    }
 
     const previousHandler = () => {
         if (show > 0) {
@@ -43,7 +48,8 @@ const Form = () => {
     const submitHandler = () => {
         const data = {
           clientType,
-          freightType
+          freightType,
+          fullName,
         }
         console.log("It's time to submit ", data);
     }
@@ -65,7 +71,8 @@ const Form = () => {
                 previous={previousHandler} 
                 next={nextHandler} number={show} 
                 dotClicked={dotClickedHandler} 
-                freightType={event => setFreightType(event.target.value)} 
+                fullNames={event => nameChangedHandler(event)} 
+                initialValue={fullName}
               />
             </animated.div>
         ),

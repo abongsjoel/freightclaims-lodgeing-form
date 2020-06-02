@@ -3,7 +3,7 @@ import React from 'react';
 import InputText from '../../Atoms/InputElements/InputText';
 import FormScreens from './FormScreens';
 
-const Screen1 = ({previous, next, number, dotClicked}) => (
+const Screen1 = ({previous, next, number, dotClicked, fullNames, initialValue}) => (
     <FormScreens 
         number = {number}
         title="What is your name ?"
@@ -11,8 +11,8 @@ const Screen1 = ({previous, next, number, dotClicked}) => (
         previous={previous}
         next={next}
         dotClicked={dotClicked} 
-    >
-        <InputText instruction="Enter your name here" />
+    >  
+        <InputText textChanged={fullNames} initialValue={initialValue} instruction="Enter your name here" />
     </FormScreens>
 );
 
