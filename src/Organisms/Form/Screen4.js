@@ -12,9 +12,9 @@ const Screen4 = ({previous, next, dotClicked}) => (
         next= {next}
         dotClicked={dotClicked}
     >
-        <InputRadio type="radio" id="air" name="freightType" value="air" label="Air Freight" />
-        <InputRadio type="radio" id="sea" name="freightType" value="sea" label="Sea Freight" />
-        <InputRadio type="radio" id="land" name="freightType" value="land" label="Land Freight" />
+        <InputRadio id="air" name="freightType" value="air" label="Air Freight" />
+        <InputRadio id="sea" name="freightType" value="sea" label="Sea Freight" />
+        <InputRadio id="land" name="freightType" value="land" label="Land Freight" />
     </FormScreens>
 );
 
