@@ -45,7 +45,7 @@ const Form = () => {
 
     const dotClickedHandler = (value, activeScreen) => {
         setShow(value);
-        console.log("value: %d, activeScreen: %d", value, Number(activeScreen));
+        // console.log("value: %d, activeScreen: %d", value, Number(activeScreen));
         setDirection((value > Number(activeScreen)) ? 'downward' : 'upward' );
     }
 
@@ -83,7 +83,7 @@ const Form = () => {
                 previous={previousHandler} 
                 next={nextHandler} number={show} 
                 dotClicked={dotClickedHandler} 
-                fullNames={nameChangedHandler} 
+                textChanged={nameChangedHandler} 
                 initialValue={fullName}
               />
             </animated.div>
@@ -160,16 +160,23 @@ const Form = () => {
       }
   }
   
-  const transitions = useTransition(show, p => p, playTransition )
+  const transitions = useTransition(show, null , playTransition )
   
   return (
     <Layout number={show} dotClicked={dotClickedHandler}>
-      <div className="simple-trans-main">
+      {/* <div className="simple-trans-main">
         {transitions.map(({ item, props, key }) => {
           const Page = pages[item]
           return <Page key={key} style={props} />
         })}
-      </div>
+      </div> */}
+       <Screen1 
+                previous={previousHandler} 
+                next={nextHandler} number={show} 
+                dotClicked={dotClickedHandler} 
+                textChanged={nameChangedHandler} 
+                initialValue={fullName}
+              />
     </Layout>
     )
 

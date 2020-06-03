@@ -30,4 +30,4 @@ const Layout = ({number, dotClicked, ...props}) => {
     );
   }
 
-export default React.memo(Layout);
+export default Layout;
