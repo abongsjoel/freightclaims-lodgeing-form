@@ -164,19 +164,12 @@ const Form = () => {
   
   return (
     <Layout number={show} dotClicked={dotClickedHandler}>
-      {/* <div className="simple-trans-main">
+      <div className="simple-trans-main">
         {transitions.map(({ item, props, key }) => {
           const Page = pages[item]
           return <Page key={key} style={props} />
         })}
-      </div> */}
-       <Screen1 
-                previous={previousHandler} 
-                next={nextHandler} number={show} 
-                dotClicked={dotClickedHandler} 
-                textChanged={nameChangedHandler} 
-                initialValue={fullName}
-              />
+      </div>
     </Layout>
     )
 
