@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import InputText from '../../Atoms/InputElements/InputText';
 import Screens from './Screens';
 
 const Screen1 = ({previous, next, number, dotClicked, textChanged, initialValue}) => {
 
-    const [fullName, setFullName] = useState('');
+    // const [fullName, setFullName] = useState('');
 
-    const nameChangedHandler = (event) => {
-      setFullName(event.target.value);
-    }
+    // const nameChangedHandler = (event) => {
+    //   setFullName(event.target.value);
+    // }
 
     return (
         <Screens 

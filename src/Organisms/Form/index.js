@@ -10,6 +10,7 @@ import Screen3 from './Screen3';
 import Screen4 from './Screen4';
 import Screen5 from './Screen5';
 import Layout from '../../HOC/Layout';
+import SummaryScreen from './summaryScreen';
 
 const Form = () => {
 
@@ -20,7 +21,7 @@ const Form = () => {
     const [freightType, setFreightType] = useState('');
     const [fullName, setFullName] = useState('');
 
-    const max = 5;
+    const max = 6;
 
     console.log("Form Runs")
 
@@ -124,6 +125,14 @@ const Form = () => {
         ({ style }) => (
           <animated.div style={{ ...style }}>
             <Screen5 
+            next={nextHandler} 
+            number={show} 
+            dotClicked={dotClickedHandler} />
+          </animated.div>
+        ),
+        ({ style }) => (
+          <animated.div style={{ ...style }}>
+            <SummaryScreen 
             previous={previousHandler} 
             submit={submitHandler} 
             number={show} 
