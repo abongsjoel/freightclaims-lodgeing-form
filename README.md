@@ -1,3 +1,46 @@
+# Amazing Sliding Form
+
+> In this project I built an amazing form that slides from one element to the next
+
+![screenshot](../master/screenshot.png)
+
+Clicking on next or previews moves the form forward and backward giving the user an amazing experience working with forms
+
+## Live Demo 
+
+- [Visit Page](https://freightclaims-lodgeing-form.vercel.app/)
+
+## Built With
+
+- HTML
+- CSS
+- JavaScript
+
+## Frameworks
+
+ - React js
+
+## Author
+
+👤 **Chi A. Joel**
+
+- GitHub: [@abongsjoel](https://github.com/abongsjoel)
+- Twitter: [@thierryjoel10](https://twitter.com/ThierryJoel10)
+- LinkedIn: [Chi Abongwa Joel](https://www.linkedin.com/in/chi-abongwa-joel-b4285a97/)
+
+
+## Show your support
+<p> Give a 
+  <g-emoji class="g-emoji" alias="star" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png"><img class="emoji" alt="star" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png"></g-emoji>
+  if you like this project!</p>
+
+## License
+  <p>This project is <a href="../Features/LICENSE">MIT</a> licensed.</p>
+
+
+## The React Framework
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
