@@ -19,6 +19,7 @@ Clicking on next or previews moves the form forward and backward giving the user
 ## Frameworks
 
  - React js
+ - Tailwindcss
 
 ## Author
 
