@@ -22,7 +22,7 @@ const Form = () => {
 
     const max = 5;
 
-    console.log("Form Runs")
+    // console.log("Form Runs")
 
     const nameChangedHandler = (event) => {
       setFullName(event.target.value);
