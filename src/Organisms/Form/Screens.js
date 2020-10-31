@@ -13,21 +13,23 @@ const Screens = ({
     showSubmit, 
     dotClicked,
     ...props
-}) => (
+}) => {
+    return (
 
-    <Card 
-        previous={previous} 
-        next={next} 
-        hidePrevious={hidePrevious}
-        submit={submit} 
-        showSubmit={showSubmit}  
-        dotClicked={dotClicked} 
-    >
-        <FormElementTitle required={required}>{title}</FormElementTitle>
-        <div className="mb-10">
-            {props.children}
-        </div>
-    </Card>
-);
+        <Card 
+            previous={previous} 
+            next={next} 
+            hidePrevious={hidePrevious}
+            submit={submit} 
+            showSubmit={showSubmit}  
+            dotClicked={dotClicked} 
+        >
+            <FormElementTitle required={required}>{title}</FormElementTitle>
+            <div className="mb-10">
+                {props.children}
+            </div>
+        </Card>
+    );
+}
 
 export default Screens;

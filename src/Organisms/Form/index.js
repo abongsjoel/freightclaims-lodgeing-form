@@ -10,6 +10,7 @@ import Screen3 from './Screen3';
 import Screen4 from './Screen4';
 import Screen5 from './Screen5';
 import Layout from '../../HOC/Layout';
+import SummaryScreen from './summaryScreen';
 
 const Form = () => {
 
@@ -20,7 +21,7 @@ const Form = () => {
     const [freightType, setFreightType] = useState('');
     const [fullName, setFullName] = useState('');
 
-    const max = 5;
+    const max = 6;
 
     // console.log("Form Runs")
 
@@ -45,7 +46,7 @@ const Form = () => {
 
     const dotClickedHandler = (value, activeScreen) => {
         setShow(value);
-        console.log("value: %d, activeScreen: %d", value, Number(activeScreen));
+        // console.log("value: %d, activeScreen: %d", value, Number(activeScreen));
         setDirection((value > Number(activeScreen)) ? 'downward' : 'upward' );
     }
 
@@ -83,7 +84,7 @@ const Form = () => {
                 previous={previousHandler} 
                 next={nextHandler} number={show} 
                 dotClicked={dotClickedHandler} 
-                fullNames={nameChangedHandler} 
+                textChanged={nameChangedHandler} 
                 initialValue={fullName}
               />
             </animated.div>
@@ -124,6 +125,14 @@ const Form = () => {
         ({ style }) => (
           <animated.div style={{ ...style }}>
             <Screen5 
+            next={nextHandler} 
+            number={show} 
+            dotClicked={dotClickedHandler} />
+          </animated.div>
+        ),
+        ({ style }) => (
+          <animated.div style={{ ...style }}>
+            <SummaryScreen 
             previous={previousHandler} 
             submit={submitHandler} 
             number={show} 
@@ -160,7 +169,7 @@ const Form = () => {
       }
   }
   
-  const transitions = useTransition(show, p => p, playTransition )
+  const transitions = useTransition(show, null , playTransition )
   
   return (
     <Layout number={show} dotClicked={dotClickedHandler}>

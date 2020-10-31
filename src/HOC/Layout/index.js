@@ -8,7 +8,7 @@ import Aux from '../Auxilary'
 
 const Layout = ({number, dotClicked, ...props}) => {
 
-  const show = (number === 0) ? "invisible" : "visible" ;
+  const show = (number === 0 || number === 6) ? "invisible" : "visible" ;
 
   return (
       <Aux>
@@ -30,4 +30,4 @@ const Layout = ({number, dotClicked, ...props}) => {
     );
   }
 
-export default React.memo(Layout);
+export default Layout;
