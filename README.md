@@ -4,7 +4,7 @@
 
 ![screenshot](../master/screenshot.png)
 
-Clicking on next or previews moves the form forward and backward giving the user an amazing experience working with forms
+Clicking on next or previews moves the form forward and backward giving the user an amazing experience working with forms. The project is built using Reactjs, the React-Spring library and Tailwindcss.
 
 ## Live Demo 
 
