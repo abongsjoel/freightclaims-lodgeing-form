@@ -1,10 +1,11 @@
 # Amazing Sliding Form
 
-> In this project I built an amazing form that slides from one element to the next
+> In this project I built an amazing form that slides from one element to the next using React.js and Tailwindcss
 
 ![screenshot](../master/screenshot.png)
 
-Clicking on next or previews moves the form forward and backward giving the user an amazing experience working with forms. The project is built using Reactjs, the React-Spring library and Tailwindcss.
+Clicking on next or previews moves the form forward and backward giving the user an amazing experience working with forms. 
+The project was designed with Figma and built using Reactjs, the React-Spring library and Tailwindcss.
 
 ## Live Demo 
 
