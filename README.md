@@ -19,7 +19,7 @@ The project was designed with Figma and built using Reactjs, the React-Spring li
 
 ## Frameworks
 
- - React js
+ - React.js
  - Tailwindcss
 
 ## Author
@@ -29,6 +29,13 @@ The project was designed with Figma and built using Reactjs, the React-Spring li
 - GitHub: [@abongsjoel](https://github.com/abongsjoel)
 - Twitter: [@thierryjoel10](https://twitter.com/ThierryJoel10)
 - LinkedIn: [Chi Abongwa Joel](https://www.linkedin.com/in/chi-abongwa-joel-b4285a97/)
+
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/abongsjoel/freightclaims-lodgeing-form/issues).
 
 
 ## Show your support
